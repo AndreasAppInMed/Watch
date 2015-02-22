@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.view setBackgroundColor:[UIColor blueColor]];
-    //What's happening?
+    //What's happening? And now?
 }
 
 - (void)didReceiveMemoryWarning {
