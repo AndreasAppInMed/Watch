@@ -14,6 +14,7 @@
 		FA177ECE1A9A4C8C002ABE92 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA177ECD1A9A4C8C002ABE92 /* Images.xcassets */; };
 		FA177ED11A9A4C8C002ABE92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA177ECF1A9A4C8C002ABE92 /* LaunchScreen.xib */; };
 		FA177EDD1A9A4C8C002ABE92 /* WatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA177EDC1A9A4C8C002ABE92 /* WatchTests.m */; };
+		FA177EE81A9A9262002ABE92 /* WatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA177EE71A9A9262002ABE92 /* WatchVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		FA177ED61A9A4C8C002ABE92 /* WatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA177EDB1A9A4C8C002ABE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA177EDC1A9A4C8C002ABE92 /* WatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchTests.m; sourceTree = "<group>"; };
+		FA177EE61A9A9262002ABE92 /* WatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchVC.h; sourceTree = "<group>"; };
+		FA177EE71A9A9262002ABE92 /* WatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				FA177ECD1A9A4C8C002ABE92 /* Images.xcassets */,
 				FA177ECF1A9A4C8C002ABE92 /* LaunchScreen.xib */,
 				FA177EC01A9A4C8C002ABE92 /* Supporting Files */,
+				FA177EE61A9A9262002ABE92 /* WatchVC.h */,
+				FA177EE71A9A9262002ABE92 /* WatchVC.m */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA177EE81A9A9262002ABE92 /* WatchVC.m in Sources */,
 				FA177EC91A9A4C8C002ABE92 /* ViewController.m in Sources */,
 				FA177EC61A9A4C8C002ABE92 /* AppDelegate.m in Sources */,
 				FA177EC31A9A4C8C002ABE92 /* main.m in Sources */,
@@ -414,6 +420,7 @@
 				FA177EE21A9A4C8C002ABE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA177EE31A9A4C8C002ABE92 /* Build configuration list for PBXNativeTarget "WatchTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				FA177EE51A9A4C8C002ABE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
