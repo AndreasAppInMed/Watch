@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "MBProgressHUD.h"
+
 @interface ViewController ()
 
 @property(nonatomic, weak) IBOutlet UIButton *button;
@@ -23,6 +25,23 @@
 
 -(IBAction)buttonOnClick:(id)sender{
     NSLog(@"%@ - %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd));
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [NSTimer scheduledTimerWithTimeInterval:.6 target:self selector:@selector(dismissHUD) userInfo:nil repeats:NO];
+    
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+//        // Do something...
+//    });
+    
+}
+
+-(void)dismissHUD{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        
+//    });
+    
 }
 
 @end
