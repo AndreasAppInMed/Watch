@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 
+@property(nonatomic, weak) IBOutlet UIButton *button;
 @end
 
 @implementation ViewController
@@ -18,6 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.view setBackgroundColor:[UIColor redColor]];
+}
+
+-(IBAction)buttonOnClick:(id)sender{
+    NSLog(@"%@ - %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd));
 }
 
 @end
