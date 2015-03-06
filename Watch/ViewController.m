@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import "MBProgressHUD.h"
+#import "NZGoogleAnalyticsTracker.h"
 
 @interface ViewController ()
 
@@ -23,9 +24,16 @@
     [self.view setBackgroundColor:[UIColor redColor]];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [NZGoogleAnalyticsTracker trackViewWithController:self];
+}
+
 -(IBAction)buttonOnClick:(id)sender{
     NSLog(@"%@ - %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd));
-    
+    [NZGoogleAnalyticsTracker trackEventWithCategory:@"category1" action:@"action1" label:@"label1"];
+
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     [NSTimer scheduledTimerWithTimeInterval:.6 target:self selector:@selector(dismissHUD) userInfo:nil repeats:NO];

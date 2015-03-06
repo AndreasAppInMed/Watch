@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "NZGoogleAnalytics.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +21,9 @@
     // Override point for customization after application launch.
     NSLog(@"%@ - %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd));
     NSLog(@"%@ - %@ launchOptions: %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd),launchOptions);
+    
+    [NZGoogleAnalytics setTrackingId:@"UA-59177406-1"];
+    
     return YES;
 }
 
