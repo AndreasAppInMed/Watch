@@ -23,6 +23,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cV-zH-HZT"/>
+                                    <segue destination="Kql-7w-99c" kind="presentation" id="azX-kP-Vzo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,6 +35,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3" y="35"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xOM-bw-OCH">
+            <objects>
+                <viewController id="Kql-7w-99c" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OWF-JU-2Le"/>
+                        <viewControllerLayoutGuide type="bottom" id="XI0-g7-Diy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t16-8x-65b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-5C-vAu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URy-oq-dnY">
+                                        <rect key="frame" x="277" y="268" width="46" height="30"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="y41-hR-vpr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.61176470589999998" green="0.8862745098" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oth-Ji-Mud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="731" y="53"/>
         </scene>
     </scenes>
 </document>
