@@ -11,6 +11,8 @@
 #import "MBProgressHUD.h"
 #import "NZGoogleAnalyticsTracker.h"
 
+#import "MKStoreKit.h"
+
 @interface ViewController ()
 
 @property(nonatomic, weak) IBOutlet UIButton *button;
@@ -32,9 +34,27 @@
 
 -(IBAction)buttonOnClick:(id)sender{
     NSLog(@"%@ - %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd));
-    [NZGoogleAnalyticsTracker trackEventWithCategory:@"category1" action:@"action1" label:@"label1"];
-
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+//    com.fritzdorfsport.purchase.upgrade
+//    
+//    323ea75263674fcbbc0ebbd54a970254
+    
+    NSString *productIdentifier = @"com.fritzdorfsport.purchase.upgrade";
+    [[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:productIdentifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
+                                                      
+                                                      NSLog(@"%@", [[MKStoreKit sharedKit] valueForKey:@"purchaseRecord"]);
+                                                  }];
+    
+//    [NZGoogleAnalyticsTracker trackEventWithCategory:@"category1" action:@"action1" label:@"label1"];
+//
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     [NSTimer scheduledTimerWithTimeInterval:.6 target:self selector:@selector(dismissHUD) userInfo:nil repeats:NO];
     
@@ -51,5 +71,7 @@
 //    });
     
 }
+
+
 
 @end

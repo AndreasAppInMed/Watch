@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Others</key>
+	<array>
+		<string>com.fritzdorfsport.purchase.upgrade</string>
+	</array>
+	<key>SharedSecret</key>
+	<string>323ea75263674fcbbc0ebbd54a970254</string>
+</dict>
+</plist>

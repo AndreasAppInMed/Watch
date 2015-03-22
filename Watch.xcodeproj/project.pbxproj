@@ -17,6 +17,8 @@
 		FA177EDD1A9A4C8C002ABE92 /* WatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA177EDC1A9A4C8C002ABE92 /* WatchTests.m */; };
 		FA177EE81A9A9262002ABE92 /* WatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA177EE71A9A9262002ABE92 /* WatchVC.m */; };
 		FA2E01BF1AB9A3B400CCB959 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2E01BE1AB9A3B400CCB959 /* Media.xcassets */; };
+		FA722F1C1ABEEA470011ACD9 /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA722F1A1ABEEA470011ACD9 /* MKStoreKit.m */; };
+		FA722F1E1ABEEB0F0011ACD9 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA722F1D1ABEEB0F0011ACD9 /* MKStoreKitConfigs.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		FA177EE61A9A9262002ABE92 /* WatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchVC.h; sourceTree = "<group>"; };
 		FA177EE71A9A9262002ABE92 /* WatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchVC.m; sourceTree = "<group>"; };
 		FA2E01BE1AB9A3B400CCB959 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FA722F1A1ABEEA470011ACD9 /* MKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreKit.m; sourceTree = "<group>"; };
+		FA722F1B1ABEEA470011ACD9 /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
+		FA722F1D1ABEEB0F0011ACD9 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,7 @@
 		FA177EBF1A9A4C8C002ABE92 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
+				FA722F191ABEEA360011ACD9 /* MKStoreKit */,
 				FA177EC41A9A4C8C002ABE92 /* AppDelegate.h */,
 				FA177EC51A9A4C8C002ABE92 /* AppDelegate.m */,
 				FA177EC71A9A4C8C002ABE92 /* ViewController.h */,
@@ -139,6 +145,16 @@
 				FA177EDB1A9A4C8C002ABE92 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA722F191ABEEA360011ACD9 /* MKStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				FA722F1D1ABEEB0F0011ACD9 /* MKStoreKitConfigs.plist */,
+				FA722F1A1ABEEA470011ACD9 /* MKStoreKit.m */,
+				FA722F1B1ABEEA470011ACD9 /* MKStoreKit.h */,
+			);
+			name = MKStoreKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +208,7 @@
 				TargetAttributes = {
 					FA177EBC1A9A4C8C002ABE92 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 75GSRF7PEB;
 					};
 					FA177ED51A9A4C8C002ABE92 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -223,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA722F1E1ABEEB0F0011ACD9 /* MKStoreKitConfigs.plist in Resources */,
 				FA177ECC1A9A4C8C002ABE92 /* Main.storyboard in Resources */,
 				FA177ED11A9A4C8C002ABE92 /* LaunchScreen.xib in Resources */,
 				FA2E01BF1AB9A3B400CCB959 /* Media.xcassets in Resources */,
@@ -278,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA177EE81A9A9262002ABE92 /* WatchVC.m in Sources */,
+				FA722F1C1ABEEA470011ACD9 /* MKStoreKit.m in Sources */,
 				FA177EC91A9A4C8C002ABE92 /* ViewController.m in Sources */,
 				FA177EC61A9A4C8C002ABE92 /* AppDelegate.m in Sources */,
 				FA177EC31A9A4C8C002ABE92 /* main.m in Sources */,
@@ -405,10 +424,13 @@
 			baseConfigurationReference = 5B6BE3A7451544A9AFF19526 /* Pods-Watch.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f24e7ffd-5bf9-417d-ab8c-c09842fdbe88";
 			};
 			name = Debug;
 		};
@@ -417,10 +439,13 @@
 			baseConfigurationReference = 5B6BE3A7451544A9AFF19526 /* Pods-Watch.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f24e7ffd-5bf9-417d-ab8c-c09842fdbe88";
 			};
 			name = Release;
 		};

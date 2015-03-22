@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "NZGoogleAnalytics.h"
+#import "MKStoreKit.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,44 @@
     NSLog(@"%@ - %@ launchOptions: %@",NSStringFromClass(self.class),NSStringFromSelector(_cmd),launchOptions);
     
     [NZGoogleAnalytics setTrackingId:@"UA-59177406-1"];
+    
+    //MKStoreKit
+    
+    [[MKStoreKit sharedKit] startProductRequest];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductsAvailableNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Products available: %@", [[MKStoreKit sharedKit] availableProducts]);
+                                                  }];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoredPurchasesNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Restored Purchases");
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoringPurchasesFailedNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Failed restoring purchases with error: %@", [note object]);
+                                                  }];
+    //MKStoreKit ends
     
     return YES;
 }
